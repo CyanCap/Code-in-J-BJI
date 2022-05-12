@@ -1,0 +1,334 @@
+\documentclass{report}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\begin{document}
+\section*{question 1.1}
+{\bf (a)}\par
+\vspace{1.em}
+
+\hspace{-1.5em}{\bf Step 1. Ask the question}\par 
+There three stages in step 1.  
+
+\vspace{0.5em}
+\begin{tabular}{ll} 
+{\bf Variables:} &$x$ = population of blue whales\\
+&$y$ = population of fin whales\\
+&$r_1 r_2$ = the intrinsic growth rates of each species\\
+&$K_1 K_2$ = the the maximum sustainable population \\
+&in the absence of competition\\
+&$\alpha $ = the effects of competition\\
+&\\
+{\bf Assumptions:} &$r_1 = 0.05$\\
+&$r_2 = 0.08$\\
+&$K_1 = 150000$\\
+&$K_2 = 400000$\\
+&$\alpha  = 10^{-8}$\\
+&$f$ = $\frac{dx}{dt} + \frac{dy}{dt}$\\
+&$x, y\geq0$\\
+&\\
+{\bf Objective:} &Maximize $f$
+\end{tabular}
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 2. Select the modeling approach}\par
+We need to maximize the number of new whales each years, that is 
+to maximize the growth rate of the whales. Then is to maximize 
+the function $f$ in the set of $S = \{x, y\geq0\}$. We need to 
+different the function $f$ and let the gradient equals to 0.
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 3. Formulate the model}\par
+Let
+\begin{align*}
+    f&=\frac{dx}{dt} + \frac{dy}{dt}\\
+    &={r_1}\cdot x(1-\frac{x}{K_1})-\alpha xy + {r_2}\cdot x(1-\frac{y}{K_2})-\alpha xy\\
+    &=0.05\cdot x(1-\frac{x}{150000})-10^{-8} xy + 0.08\cdot y(1-\frac{y}{400000})-10^{-8} xy
+\end{align*}
+\par And then we find the gradient of it we get
+\begin{align*}
+    &\frac{\partial f}{\partial x}=0.05-\frac{x}{1500000}-2\cdot 10^{-8}y=0,\\
+    &\frac{\partial f}{\partial y}=0.08-\frac{y}{2500000}-2\cdot 10^{-8}x=0.
+\end{align*}
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 4. Solve the model}\par
+By solving the equations in Step 3, we can easily get
+\par $x = \frac{138000000}{1997} \approx 69103.66$ and 
+$y = \frac{392500000}{1997} \approx 196544.82$.
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 5. Answer the question}\par
+By solving this model we can find the max new-whales-born number where 
+the number of blue whales is approaching to 69103, and the number of fin whales is approaching to 196544.
+
+\newpage
+\vspace{2.em}
+
+\noindent
+{\bf (b)}\par
+\vspace{1.em}
+\hspace{-1.5em}{\bf Sensitivity analysis}\par
+Treat $r_1$ as an unknown number we get
+\begin{align*}
+    &f=r_1 \cdot x(1-\frac{x}{150000})-10^{-8} xy + 0.08\cdot y(1-\frac{y}{400000})-10^{-8} xy,\\
+    &\frac{\partial f}{\partial x}=r_1 -\frac{2r_1\cdot x}{150000}-2\cdot 10^{-8}y=0,\\
+    &\frac{\partial f}{\partial y}=0.08-\frac{y}{2500000}-2\cdot 10^{-8}x=0.
+\end{align*}
+\par
+Solving for $x$ and $y$ as before yields
+\begin{align*}
+    &x=\frac{12000000(250r_1 -1)}{40000r_1 -3},\\
+    &y=\frac{7850000000r_1}{40000r_1 -3}.
+\end{align*}
+\par We can also get
+\begin{align*}
+    &\frac{dx}{dr_1}=\frac{471000000000}{{(40000r_1 -3)}^2},\\
+    &\frac{dy}{dr_1}=-\frac{23550000000}{{(40000r_1 -3)}^2}.
+\end{align*}
+\par At $r_1 = 0.05$, so that 
+\begin{align*}
+    &S(x,r_1)=\frac{dx}{dr_1}\cdot \frac{r_1}{x}\approx 0.0855,\\
+    &S(y,r_1)=\frac{dy}{dr_1}\cdot \frac{r_1}{y}\approx -0.0015.
+\end{align*}
+
+\vspace{0.5em}
+\par 
+Now let's treat $r_2$ as an unknown number, then we get
+\begin{align*}
+    &f=0.05 \cdot x(1-\frac{x}{150000})-10^{-8} xy + r_2\cdot y(1-\frac{y}{400000})-10^{-8} xy,\\
+    &\frac{\partial f}{\partial x}=0.05 -\frac{x}{1500000}-2\cdot 10^{-8}y=0,\\
+    &\frac{\partial f}{\partial y}=r_2-\frac{2r_2\cdot y}{400000}-2\cdot 10^{-8}x=0.
+\end{align*}
+\par
+Solving for $x$ and $y$ as before yields
+\begin{align*}
+    &x=\frac{1725000000r_2}{25000r_2 -3},\\
+    &y=\frac{5000000000r_2-7500000}{25000r_2 -3}.
+\end{align*}
+\par We can also get
+\begin{align*}
+    &\frac{dx}{dr_2}=-\frac{5175000000}{{(25000r_2 -3)}^2},\\
+    &\frac{dy}{dr_2}=\frac{172500000000}{{(25000r_2 -3)}^2}.
+\end{align*}
+\par At $r_2 = 0.08$, so that 
+\begin{align*}
+    &S(x,r_2)=\frac{dx}{dr_2}\cdot \frac{r_1}{x}\approx -0.0150,\\
+    &S(y,r_2)=\frac{dy}{dr_2}\cdot \frac{r_1}{y}\approx 0.1761.
+\end{align*}
+\par So we can get $S(x,r_1)=0.0855, S(y,r_1)=-0.0015, S(x,r_2)=-0.0150\; and\; S(y,r_2)=0.1761$.
+
+\newpage
+\section*{question 1.6} 
+{\bf (a)}\par
+
+\hspace{-1.5em}{\bf Step 1. Ask the question}\par 
+There three stages in step 1.
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+    {\bf Variables:}&$p$ = the sale price of each unit (\$)\\
+    &$q$ = the cost of advertising (\$)\\
+    &$n$ = the number of selling units\\
+    &$R$ = the revenue per month (\$/month)\\
+    &$C$ = the cost per month (\$/month)\\
+    &$P$ = the profit per month (\$/month)\\
+    &\\
+    {\bf Assumptions:}
+    &$n=10000+50(950-p)+0.02(q-50000)$\\
+    &$C=700\cdot n+q$\\
+    &$R=p\cdot n$\\
+    &$F=R-C$\\
+    &$700\leq p\leq 950$\\
+    &$50000\leq q\leq 100000$\\
+    &\\
+    {\bf Objective:}
+    &Maximize $F$\\
+\end{tabular}
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 2. Select the modeling approach}\par
+This problem will be modeled as a multivariable constrained optimization problem and
+solved using the method of Lagrange multipliers.
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 3. Formulate the model}\par
+We can get 
+\begin{align*}
+    F&=R-C=(p\cdot n)-(700n+q)\\
+    &=(p(10000+50(950-p)+0.02(q-50000)))-(700(10000+50(950-p)+0.02(q-50000))+q)\\
+    &=-50p^2 +91500p+0.02p\cdot q-15q-39550000.
+\end{align*}
+\par We wish to maximize $F$ satisfying the constraints
+$700\leq p\leq 950$ and $50000\leq q\leq 100000$.
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 4. Solve the model}\par
+Then we will apply Lagrange multiplier methods to find the maximum of $y=F(p,q)$ over 
+the set previously showing. Compute 
+\begin{equation*}
+    \nabla F=(-100p+91500+0.02q, 0.02p-15).
+\end{equation*}
+\par First, let $\nabla F=0$, we can find that the solution of q is 
+not in the feasible region. So the maximum $F$ is on the boundary of the feasible region. 
+We can find that if $p$ is a fixed parameter, then $F(p, q)$ increases, as $q\longrightarrow 100000$. 
+Since the profit $F$ and the cost of advertising $q$ shows a positive correlation. 
+So we can claim that $F$ is optimal when $q = 100000$.  
+And we set $g(p,q)=q=100000$. So we get $\nabla g=(0,1)$.
+\par From $\nabla F = \lambda \cdot \nabla g$, so the Lagrange multiplier equations are 
+\begin{align*}
+    -100p+91500+0.02q&=0\\
+    0.02p-15&=\lambda.
+\end{align*} We get
+\begin{align*}
+&p = 935, \\
+&q=100000, \\
+&\lambda =3.7,\\
+&F = 2661250.
+\end{align*} 
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 5. Answer the question}\par
+So we need to set the price to 935\$, and pay 100000\$ into the advertising. 
+Then we can get the maximum of the final profit which is 2661250\$.
+
+\newpage
+{\bf (b)}\par
+
+Let's treat the price elasticity as an unknown variable denoted as $e_1$. Then we can get
+\begin{align*}
+    n&=10000+e_1(950-p)+0.02(q-50000),\\
+    F&=R-C\\
+    &=-e_1p^2 +0.02pq+(9000+1650e_1)p-15q-(6300000+665000e_1)   
+\end{align*}
+And $\nabla F =(-2e_1 p+0.02q+9000+1650e_1, 0.02p-15)$.
+\par Using the Lagrange multiplier method we can get 
+\begin{align*}
+    &p=\frac{825e_1+5500}{e_1},\\
+    &q=100000,\\
+    &\lambda =\frac{3e_1+220}{2e_1}.
+\end{align*}
+\par so at the point $p = 935$, $q=100000$, $e_1=50$, we can get 
+\begin{align*}
+    S(p,e_1)&=\frac{dp}{de_1}\cdot \frac{e_1}{p}\approx -0.1176,\\
+    S(q,e_1)&=0.
+\end{align*}
+
+\par Then let's treat the advertising elasticity as an unknown variable denoted as $e_2$. 
+Then we can get 
+\begin{align*}
+    n&=10000+50(950-p)+e_2(q-50000),\\
+    F&=R-C\\
+    &=-50p^2 +e_2pq+(92500-50000e_2)p-(700e_2 +1)q+(35000000e_2 -40250000) 
+\end{align*}
+And $\nabla F =(-100p+e_2 q+92500-50000e_2, e_2 p-700e_2 -1)$.
+\par Using the Lagrange multiplier method we can get 
+\begin{align*}
+    &p=500e_2 + 925,\\
+    &q=100000,\\
+    &\lambda =500{e_2}^2 +225e_2 -1.
+\end{align*}
+\par so at the point $p = 935$, $q=100000$, $e_2=0.02$, we can get 
+\begin{align*}
+    S(p,e_2)&=\frac{dp}{de_2}\cdot \frac{e_2}{p} \approx 0.0107,\\
+    S(q,e_2)&=0.
+\end{align*}
+
+{\bf (d)}\par
+The value of the multiplier found in part (a) is $\lambda = 3.7$.
+That means we can get 
+\begin{align*}
+    \frac{\partial F}{\partial c} = \lambda =3.7,
+\end{align*}
+ where $c$ is equals to $q$ since $g = q = 100000$.
+That means that the addition of 1 \$ of the cost in advertising $\Delta q = 1$, the profit 
+$\Delta F = 3.7$ \$. So if the manufacturer wants to get more profit, 
+they should increase the cost of advertising.
+
+\newpage
+\section*{Question 2.}
+\par We can write the objective function as Maximize $l = -2sx_1 ^{2}-2x_2 ^{2}+2x_1 x_2+6x_1$. So we can get that 
+\begin{equation*}
+    \nabla l =(-4x_1 +2x_2 +6,2x_1 - 4x_2).
+\end{equation*}
+
+By solving $\nabla l = 0$, we can find that the solution is not in feasible region.
+So the maximum must occur on the boundary. And let's add relaxation parameter $x_3$ and $x_4$. 
+Then we can write the question as 
+\begin{align*}
+    &Maximize \quad l(x_1,x_2,x_3,x_4) = -2x_1 ^{2}-2x_2 ^{2}+2x_1 x_2+6x_1+0x_3+0x_4\\
+    &Subject\; to \quad \begin{cases}
+        g_1(x_1,x_2,x_3,x_4) =3x_1 +4x_2+x_3 ^{2}-6=0\\
+        g_2(x_1,x_2,x_3,x_4) =-x_1 +4x_2+x_4^{2}-2=0       
+    \end{cases}
+\end{align*}
+Compute
+\begin{align*}
+    &\nabla l=(-4x_1+2x_2+6,-4x_2+2x_1,0,0),\\
+    &\nabla g_1=(3,4,2x_3,0),\\
+    &\nabla g_2=(-1,4,0,2x_4).
+\end{align*}
+
+Then the Lagrange multiplier formula $\nabla l =\lambda_1 \nabla g_1+\lambda_2 \nabla g_2$ gives
+\begin{align*}
+    \begin{cases}
+        -4x_1+2x_2+6=3\lambda_1 -\lambda_2\\
+        -4x_2+2x_1=4\lambda_1 +4\lambda_2\\
+        0=2x_3 \lambda_1 +0\\
+        0=0+2x_4 \lambda_2
+    \end{cases}
+\end{align*}
+
+\par 
+Observing the equations we can find that $\lambda_1$, $\lambda_2$ cannot both being 0s. 
+
+\par
+{\bf i.} If $x_3=x_4=0$.  
+\par It becomes to 
+\begin{align*}
+    \begin{cases}
+        3x_1 +4x_2-6=0 \\
+        -x_1 +4x_2-2=0
+    \end{cases}
+\end{align*}
+
+\noindent
+We get $x_1=1,x_2=\frac{3}{4}$, and $f=-\frac{35}{8}$. 
+
+{\bf ii.} If $x_3=0,x_4\neq 0$. This can imply $\lambda_1\neq 0,\lambda_2 =0$. 
+\par It becomes to 
+\begin{align*}
+    \begin{cases}
+        3x_1 +4x_2-6=0\\
+        -4x_1+2x_2+6=3\lambda_1\\
+        -4x_2+2x_1=4\lambda_1
+    \end{cases}
+\end{align*}
+
+\noindent
+We get $x_1=\frac{54}{37},x_2=\frac{15}{37},\lambda_1 =\frac{12}{37}$, 
+and $f=-\frac{198}{37}$. 
+
+{\bf iii.} If $x_3\neq 0,x_4=0$. This can imply $\lambda_2\neq 0,\lambda_1 =0$.
+\par It becomes to
+\begin{align*}
+    \begin{cases}
+        -x_1 +4x_2-2=0\\
+        -4x_1+2x_2+6=-\lambda_2\\
+        -4x_2+2x_1=4\lambda_2
+    \end{cases}
+\end{align*}
+We get $\lambda_2=0$, that is a contradiction. 
+
+\vspace{1.em}
+\par So we can get that $-\frac{198}{37}\leq -\frac{35}{8}$, so the minimum of $f$ 
+is $-\frac{198}{37}$.
+\end{document}
+%URL:https://zh.numberempire.com/equationsolver.php?function=0.05-%28%28x%29%2F%281500000%29%29-2%2A%2810%5E%28-8%29%29%2Ay%3D0%2Ca-%28%282%2Aa%2Ay%29%2F%28400000%29%29-2%2A%2810%5E%28-8%29%29%2Ax%3D0&var=x%2Cy&result_type=false&answers=&_p1=2083
+%https://zh.numberempire.com/equationsolver.php?function=a-%28%282%2Aa%2Ax%29%2F%28150000%29%29-2%2A%2810%5E%28-8%29%29%2Ay%3D0%2C0.08-%28%28y%29%2F%282500000%29%29-2%2A%2810%5E%28-8%29%29%2Ax%3D0&var=x%2Cy&result_type=false&answers=&_p1=2083
+%https://zh.numberempire.com/equationsolver.php?function=-100%2Ap%2B100000%2Aa%2B92500-50000%2Aa%3D0%2Ca%2Ap-700%2Aa-1%3Dt&var=p%2Ct&result_type=false&answers=&_p1=2083

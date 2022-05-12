@@ -1,0 +1,296 @@
+\documentclass{report}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{bm}
+\geometry{a4paper,scale=0.8}
+
+\begin{document}
+
+\section*{Question 1.}
+\par Now we need to prove the proposition 4.1. 
+There are 4 statements, and we need to prove that they are equivalent. 
+Actually we just need to justify that (i) is equivalent to (ii), (iii) and (iv). 
+Then all this 4 statements will be equivalent to each other naturally. 
+Since we can get (i) $\Leftrightarrow$ (ii) $\Leftrightarrow$ (iii)  i.e (i) $\Leftrightarrow$ (iii) logically. 
+\vspace{0.5em}
+
+\par {\bf (a). (i) is equivalent to (ii)}
+\begin{proof}
+Suppose that $\mathcal{T}$ is firmly nonexpansive, then we need to find a nonexpansive operator $ \mathcal{N} : \mathbb{R}^n \to \mathbb{R}^n$ 
+such that $\mathcal{T}=(1-\alpha)\mathcal{I}+\alpha \mathcal{N}$. 
+Firstly, because $\mathcal{T}$ is nonexpansive, we have 
+
+\begin{align*}
+    \left\lVert \mathcal{T}x-\mathcal{T}y\right\rVert ^2 \leq \langle \mathcal{T}x-\mathcal{T}y,x-y\rangle. 
+\end{align*}
+
+\par And there is a nonexpansive operator $\mathcal{N}$ which satisfying
+\begin{align*}
+    \left\lVert \mathcal{N}x-\mathcal{N}y\right\rVert \leq \left\lVert x-y\right\rVert.
+\end{align*}
+
+\par Now we want to substitute $\mathcal{T}$ by $\frac{1}{2}\mathcal{I}+\frac{1}{2}\mathcal{N}$.
+We can get 
+
+\begin{align*}
+    \Vert (\frac{1}{2}\mathcal{I}+\frac{1}{2}\mathcal{N})x-(\frac{1}{2}\mathcal{I}+\frac{1}{2}\mathcal{N})y\Vert ^2&\leq \langle (\frac{1}{2}\mathcal{I}+\frac{1}{2}\mathcal{N})x-(\frac{1}{2}\mathcal{I}+\frac{1}{2}\mathcal{N})y,x-y\rangle \\
+    \Vert (\mathcal{I}+\mathcal{N})x-(\mathcal{I}+\mathcal{N})y\Vert ^2&\leq \langle (\mathcal{I}+\mathcal{N})x-(\mathcal{I}+\mathcal{N})y,2(x-y)\rangle.
+\end{align*}
+
+\par If we calculate the left side of this inequation, we can easily get that 
+
+\begin{align*}
+    LHS&={(\mathcal{I}+\mathcal{N})}^2 \Vert x-y \Vert ^2 \\
+    &=\Vert x-y\Vert^2 +2\mathcal{N}\Vert x-y\Vert^2 +\Vert \mathcal{N}x-\mathcal{N}y\Vert^2. 
+\end{align*}
+
+And the right side equals to 
+
+\begin{align*}
+    RHS&=\langle x-y+\mathcal{N}x-\mathcal{N}y,2(x-y)\rangle\\
+    &=2\Vert x-y\Vert^2+ 2\mathcal{N} \Vert x-y\Vert^2.
+\end{align*}
+
+\par Then we can get that 
+
+\begin{align*}
+    \Vert x-y\Vert^2 +2\mathcal{N}\Vert x-y\Vert^2 +\Vert \mathcal{N}x-\mathcal{N}y\Vert^2 &\leq 2\Vert x-y\Vert^2+ 2\mathcal{N} \Vert x-y\Vert^2 \\
+    \Vert\mathcal{N}x-\mathcal{N}y\Vert^2 &\leq \Vert x-y\Vert ^2. 
+\end{align*}
+
+\par That is to say that, $\mathcal{N}$ is a nonexpansive operator. 
+At the same time, $\mathcal{T}$ is a $\frac{1}{2}$-averaged nonexpansive operator. 
+
+\par Now let's proof that (ii) $\Rightarrow $ (i). 
+That is to say that there is a nonexpansive operator $\mathcal{N}$ such that $\mathcal{T}$ satisfying $\mathcal{T}=\frac{1}{2} \mathcal{I}+\frac{1}{2} \mathcal{N}$.
+Then $\mathcal{T}$ is firmly nonexpansive. 
+Since $\mathcal{N}$ is nonexpansive we have 
+
+\begin{align*}
+    \Vert \mathcal{N}x-\mathcal{N}y\Vert \leq \Vert x-y\Vert.
+\end{align*}
+
+Substituting this inequaltion by $\mathcal{N}=2\mathcal{T}-\mathcal{I}$, we can get 
+
+\begin{align*}
+    \Vert (2\mathcal{T}-\mathcal{I})(x-y)\Vert &\leq \Vert x-y\Vert \\
+    \Vert (2\mathcal{T}-\mathcal{I})(x-y)\Vert^2 &\leq \Vert x-y\Vert ^2 \\
+    {(2\mathcal{T}-\mathcal{I})}^2 \Vert x-y \Vert ^2 &\leq \Vert x-y\Vert ^2 \\
+    4\Vert \mathcal{T}x-\mathcal{T}y\Vert ^2 -4\mathcal{T}\Vert x-y\Vert^2 +&\Vert x-y\Vert^2 \leq \Vert x-y\Vert^2\\ 
+    \Vert \mathcal{T}x-\mathcal{T}y\Vert^2 &\leq \mathcal{T}\Vert x-y\Vert^2 \\
+    \Vert \mathcal{T}x-\mathcal{T}y\Vert^2 &\leq \langle \mathcal{T}x-\mathcal{T}y,x-y\rangle.
+\end{align*}
+
+\par So we can get that $\mathcal{T}$ is firmly nonexpansive. 
+And we can claim that (i) is equivalent to (ii). 
+\end{proof}
+
+\par {\bf (b). (i) is equivalent to (iii)}
+
+\begin{proof}
+
+    \par Now let's prove (i) $\Leftrightarrow$ (iii). 
+    Actually from (a) we can get that $\mathcal{T}$ is firmly nonexpansive and then $\mathcal{T}$ is also $\frac{1}{2}$-averaged nonexpansive. 
+    From that we have $\mathcal{I}-\mathcal{T}=\mathcal{T}-\mathcal{N}$. 
+    If $\mathcal{T}$ is firmly nonexpansive,
+    we can get that 
+
+    \begin{align*}
+        &\Vert (\mathcal{I}-\mathcal{T})(x-y)\Vert^2\\
+        =&\Vert x-y\Vert^2 +\Vert \mathcal{T}x-\mathcal{T}y\Vert^2 -2\langle \mathcal{T}x-\mathcal{T}y,x-y\rangle.
+    \end{align*}
+
+    \par Also, we have 
+
+    \begin{align*}
+        &\langle (\mathcal{I}-\mathcal{T})x-(\mathcal{I}-\mathcal{T})y,x-y\rangle \\
+        =&\Vert x-y\Vert ^2 -\langle \mathcal{T}x-\mathcal{T}y,x-y\rangle.
+    \end{align*}
+
+    Since $\mathcal{T}$ is firmly nonexpansive, 
+    if we put this 2 into left side and right side respectively, we have 
+
+    \begin{align*}
+        \Vert \mathcal{T}x-\mathcal{T}y\Vert^2 \leq \langle \mathcal{T}x-\mathcal{T}y,x-y\rangle.
+    \end{align*}
+
+    So $\mathcal{I}-\mathcal{T}$ is firmly nonexpansive. 
+    If $\mathcal{I}-\mathcal{T}$ is firmly nonexpansive, we can also get the same result through the same method. 
+    Then easily we have (i) $\Leftrightarrow$ (iii).
+\end{proof}
+
+\par {\bf (c). (i) is equivalent to (iv)} 
+\begin{proof}
+    If $\mathcal{T}$ is firmly nonexpansive, so as it is $\frac{1}{2}$-averaged nonexpansive, 
+    and there is a nonexpansive operator $\mathcal{N}$ satisfying 
+    $\mathcal{T}=\frac{1}{2}\mathcal{I}+\frac{1}{2}\mathcal{N}$.
+    That is to say that $\mathcal{N}=2\mathcal{T}-\mathcal{I}$. 
+    And $\mathcal{N}$ is nonexpansive, so as $2\mathcal{T}-\mathcal{I}$.
+    \vspace{0.5em}
+
+    \par If $2\mathcal{T}-\mathcal{I}$ is nonexpansive, we can define $\mathcal{N}=2\mathcal{T}-\mathcal{I}$ as a new nonexpansive operator. 
+    Then it satisfying $\mathcal{T}=\frac{1}{2}\mathcal{I}+\frac{1}{2}\mathcal{N}$, it can show that $\mathcal{T}$ is firmly nonexpansive. 
+    So (iv) $\Rightarrow$ (i). 
+    Then (i) is equivalent to (iv).
+\end{proof}
+
+\par We have been proved that (i) $\Leftrightarrow$ (ii), (i) $\Leftrightarrow$ (iii) and 
+(i) $\Leftrightarrow$ (iv). 
+That is to say (i) $\Leftrightarrow$ (ii) $\Leftrightarrow$ (iii) $\Leftrightarrow$ (iv). 
+Then this 4 statements are equivalent. 
+So the proposition 4.1 is true. 
+
+\newpage
+
+\section*{Question 2.}
+
+\begin{proof}
+    In this question, we need to prove that prox$_{\Vert \cdot\Vert_1}$ is firmly nonexpansive. 
+    That is to say prox$_{\Vert \cdot\Vert_1}$ satisfying 
+    \begin{align}
+        \Vert {\rm prox}_{\Vert \cdot\Vert_1}(\bm x) - {\rm prox}_{\Vert \cdot\Vert_1}(\bm y)\Vert^2 \leq \langle {\rm prox}_{\Vert \cdot\Vert_1}(\bm x) - {\rm prox}_{\Vert \cdot\Vert_1}(\bm y),\bm x-\bm y\rangle \tag{2.1}.
+    \end{align}
+
+    From (3.7) we know that for $\bm x \in \mathbb{R}$,
+    \begin{align}
+        {\rm prox}_{|\cdot|}(x)=\max\{|x|-1,0\}\cdot {\rm sgn}(x). \tag{2.2} 
+    \end{align}
+
+    From (3.8) we know that for $\bm x \in \mathbb{R}^n $,
+    \begin{align}
+        {\rm prox}_{\Vert \cdot\Vert_1}(\bm x)={({\rm prox}_{|\cdot|}(x_1),{\rm prox}_{|\cdot|}(x_2),\dots,{\rm prox}_{|\cdot|}(x_n))}^T. \tag{2.3}
+    \end{align}
+
+    \vspace{0.5em}
+    \par {\bf In this question, I denote prox$_{\Vert \cdot\Vert}$ as prox$_{\Vert \cdot\Vert_1}$, since there is only $\ell_1$-norm. 
+    So I ignore the 1 index of $\Vert \cdot\Vert_1$. And I denote prox$(x)$ as prox$_{|\cdot|}(x)$. }
+
+    \par For $x \in \mathbb{R}$, from the lecture 4 we can rewrite prox$(x)$ as 
+
+    \[{\rm prox}(x)=\left\{
+        \begin{aligned}
+        &x-1,    &x\geq 1 \\
+        &0,  &-1\leq x\leq 1 \\
+        &x+1,   &x\leq -1
+        \end{aligned}
+        \right.
+    \]
+    So as $y \in \mathbb{R}$.
+
+    Then we can expand the inequaltion (2.1) using (2.3) and get 
+
+    \begin{align*}
+        \Vert {\rm prox}_{\Vert \cdot\Vert}(\bm x) - {\rm prox}_{\Vert \cdot\Vert}(\bm y)\Vert^2 \leq \langle {\rm prox}_{\Vert \cdot\Vert}(\bm x)& - {\rm prox}_{\Vert \cdot\Vert}(\bm y),\bm x-\bm y\rangle \\
+        \\
+        \Vert ({\rm prox}(x_1),\dots,{\rm prox}(x_n)) - ({\rm prox}(y_1),\dots,{\rm prox}(y_n))\Vert^2 &\leq \\
+        \langle ({\rm prox}(x_1)-{\rm prox}(y_1),\dots,{\rm prox}(x_n)&-{\rm prox}(y_n)),(x_1-y_1,\dots,x_n-y_n)\rangle. \\
+    \end{align*}
+    Continuing we can get 
+
+    \begin{align*}
+       \sum_{i=0}^n{({\rm prox}(x_i)-{\rm prox}(y_i))}^2 \leq \sum_{i=0}^n({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i).
+    \end{align*}
+    That is what we need to prove. 
+    Now we want to prove for any $i\in \{1,2,\dots,n\}$, there exist 
+    \begin{align}
+        {({\rm prox}(x_i)-{\rm prox}(y_i))}^2=({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i). \tag{2.4}
+    \end{align}
+
+    Firstly, if ${\bm x}={\bm y}$ i.e $x_i=y_i$ for any $i\in \{1,2,\dots,n\}$, 
+    then $\bm x$ is a fixed point. \\
+    And ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2=({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+    This satisfies the definition of firmly nonexpansive. 
+
+    Now let's focus on $x\neq y$. 
+
+    \par Using the equation of prox$(x)$, we can calculate ${\rm prox}(x_i)-{\rm prox}(y_i)$. 
+    And there are 8 situations. \\
+    For $x,y \in \mathbb{R}$, $i\in \{1,2,\dots,n\}$
+
+    \[
+        \psi(x_i,y_i) ={\rm prox}(x_i)-{\rm prox}(y_i)=\left\{
+        \begin{aligned}
+        &x_i-y_i,   &x\geq 1,y\geq 1 \; and \; x\leq -1,y\leq -1\\
+        &x_i-1,     &x\geq 1,-1\leq y\leq 1 \\
+        &x_i-y_i-2, &x\geq 1,y\leq -1 \\
+        &1-y_i,     &-1\leq x\leq 1,y\geq 1 \\
+        &0,         &-1\leq x\leq 1,-1\leq y\leq 1 \\
+        &-y_i-1,    &-1\leq x\leq 1,y\leq -1\\
+        &x_i-y_i+2, &x\leq -1,y\geq 1 \\
+        &x_i+1,     &x\leq -1,-1\leq y\leq 1
+        \end{aligned}
+        \right.
+    \]
+    
+    Let's look at every elements of ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2$ and $({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$.
+
+    \newpage
+    {\bf (a)} $x\geq 1,y\geq 1 \; and \; x\leq -1,y\leq -1$
+    \par Easily find that ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2={(x_i-y_i)}^2=({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+    \vspace{1em}
+
+    {\bf (b)} $x\geq 1,-1\leq y\leq 1$
+    \par We get $x_i-1 \geq 0$ and $x_i-y_i >0$. 
+    Further we have $x_i-y_i > x_i-1$. 
+    If we multiple $(x_i-1)$ which is greater than 0, 
+    we get
+    ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2 = {(x_i-1)}^2 \leq (x_i-1)(x_i-y_i) = ({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+    \vspace{1em}
+
+    {\bf (c)} $x\geq 1,y\leq -1$
+    \par We get $x_i-y_i-2 \geq 0$ and $x_i-y_i \geq 0$, so $x_i-y_i> x_i-y_i-2$. \\
+    Then ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2 = {(x_i-y_i-2)}^2 \leq (x_i-y_i-2)(x_i-y_i) = ({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+    \vspace{1em}
+    
+    {\bf (d)} $-1\leq x\leq 1,y\geq 1$
+    \par We get $1-y_i\leq 0$ and $x_i-y_i<0$, so $0\geq 1-y_i>x_i-y_i$. \\
+    Then ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2 = {(1-y_i)}^2 \leq (1-y_i)(x_i-y_i) = ({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+    \vspace{1em}
+
+    {\bf (e)} $-1\leq x\leq 1,-1\leq y\leq 1$
+    \par If $x_i \neq y_i$, two side of it equals to 0.
+    So ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2= ({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+    \vspace{1em}
+
+    {\bf (f)} $-1\leq x\leq 1,y\leq -1$ 
+    \par We get $-y_i-1\geq 0$ and $x_i-y_i>0$, so $x_i-y_i>-y_i-1$. \\
+    Then ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2 = {(-1-y_i)}^2 \leq (-1-y_i)(x_i-y_i) = ({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+    \vspace{1em}
+
+    {\bf (g)} $x\leq -1,y\geq 1$ 
+    \par We get $x_i-y_i+2 \leq 0$ and $x_i-y_i\leq 0$, so $x_i-y_i+2> x_i-y_i$. \\
+    Then ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2 = {(x_i-y_i+2)}^2 \leq (x_i-y_i+2)(x_i-y_i) = ({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+    \vspace{1em}
+
+    {\bf (h)} $x\leq -1,-1\leq y\leq 1$
+    \par We get $x_i+1\leq 0$ and $x_i-y_i<0$, so $x_i-y_i<x_i+1$. \\
+    Then ${({\rm prox}(x_i)-{\rm prox}(y_i))}^2 = {(x_i+1)}^2 \leq (x_i+1)(x_i-y_i) = ({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i)$. 
+
+    \vspace{3em}
+
+    \par So for $i\in \{1,2,\dots,n\}$ we have (2.4)
+
+    \begin{align*}
+        {({\rm prox}(x_i)-{\rm prox}(y_i))}^2=({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i).
+    \end{align*}
+
+    And if we add them together, also we have 
+
+    \begin{align*}
+        \sum_{i=0}^n{({\rm prox}(x_i)-{\rm prox}(y_i))}^2 &\leq \sum_{i=0}^n({\rm prox}(x_i)-{\rm prox}(y_i))(x_i-y_i) \\
+        \Vert {\rm prox}_{\Vert \cdot\Vert_1}(\bm x) - {\rm prox}_{\Vert \cdot\Vert_1}(\bm y)\Vert^2 &\leq \langle {\rm prox}_{\Vert \cdot\Vert_1}(\bm x) - {\rm prox}_{\Vert \cdot\Vert_1}(\bm y),\bm x-\bm y\rangle.
+    \end{align*}
+
+    That is the statement (2.1). 
+    So we can claim that prox$_{\Vert \cdot\Vert_1}$ is firmly nonexpansive.
+\end{proof}
+\end{document}

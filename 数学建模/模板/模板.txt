@@ -1,0 +1,42 @@
+\documentclass{report}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{float}
+\geometry{a4paper,scale=0.8}
+\begin{document}
+\begin{spacing}{1.3541667}
+
+\hspace{-1.5em}{\bf Step 1. Ask the question}\par 
+There three stages in step 1.
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+\end{tabular}
+
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 2. Select the modeling approach}\par
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 3. Formulate the model}\par
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 4. Solve the model}\par
+
+\vspace{1em}
+\hspace{-1.5em}{\bf Step 5. Answer the question}\par
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.8]{figs/1_2.jpg}
+    \caption{}
+\end{figure}

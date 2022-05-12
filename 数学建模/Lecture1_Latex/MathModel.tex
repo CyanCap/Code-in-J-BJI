@@ -1,0 +1,142 @@
+\documentclass[12pt,twosided,titlepage]{article}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{cancel}
+\usepackage{fullpage}
+\usepackage{bm}
+%\usepackage{palatino} % this is the recommended font
+\usepackage{amsthm}
+\usepackage{amsmath,epsfig,latexsym,amssymb,rotating}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{ulem}
+\usepackage{soul}
+\usepackage{listings}
+\usepackage{xcolor}
+%\usepackage{geometry}
+%\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+%---Adjust row spacing of items---
+\usepackage{paralist}
+\let\itemize\compactitem
+%\let\enditemize\endcompactitem
+%---------------------------------
+%\usepackage{ntheorem}
+% Define some useful tools for these notes
+\newenvironment{thinlist}[1][\labelitemi]{\begin{list}{#1}{\topsep=\smallskipamount \parsep=\smallskipamount \itemsep=\smallskipamount}}{\end{list}}
+\renewcommand{\baselinestretch}{1.2}
+\numberwithin{equation}{section}
+
+\DeclareMathOperator*{\rank}{rank}
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\Argmin}{Argmin}
+
+\lstset{
+numbers=left,
+    numberstyle= \tiny,
+    keywordstyle= \color{ blue!70},
+    commentstyle= \color{red!50!green!50!blue!50},
+    frame=shadowbox, % 阴影效果
+    rulesepcolor= \color{ red!20!green!20!blue!20} ,
+    escapeinside=``, % 英文分号中可写入中文
+    xleftmargin=2em,xrightmargin=2em, aboveskip=1em,
+    framexleftmargin=2em
+}
+
+\begin{document}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{mydef}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+\def \bC {\mathbb C}
+\def \bR {\mathbb R}
+\def \bN {\mathbb N}
+\def \bS {\mathbb S}
+\def \bZ {\mathbb Z}
+\def \bRn {\bR^n}
+\def \bRm {\bR^m}
+\def \bRK {\bR^K}
+\def \bRKp {\bR^{K+1}}
+\def \bRT {\bR^T}
+\def \bRmn {\bR^{m\times n}}
+\def \bRnm {\bR^{n\times m}}
+\def \bRnn {\bR^{n\times n}}
+\def \bRmm {\bR^{m\times m}}
+\def \bSpn {\bS_+^{n}}
+\def \bSppn {\bS_{++}^{n}}
+
+\def \tr {\mathrm{tr}}
+\def \var {\mathrm{var}}
+\def \cov {\mathrm{cov}}
+\def \sgn {\mathrm{sgn}}
+\def \range {\mathrm{range}}
+\def \prox {\mathrm{prox}}
+\def \diag {\mathrm{diag}}
+
+\def \bmA {\bm A}
+\def \bmB {\bm B}
+\def \bmC {\bm C}
+\def \bmD {\bm D}
+\def \bmH {\bm H}
+\def \bmI {\bm I}
+\def \bmK {\bm K}
+\def \bmL {\bm L}
+\def \bmP {\bm P}
+\def \bmQ {\bm Q}
+\def \bmR {\bm R}
+\def \bmS {\bm S}
+\def \bmT {\bm T}
+\def \bmU {\bm U}
+\def \bmV {\bm V}
+\def \bmW {\bm W}
+\def \bmX {\bm X}
+\def \bmY {\bm Y}
+\def \bmZ {\bm Z}
+\def \bmalpha {\bm\alpha}
+\def \bmsigma {\bm\sigma}
+\def \bmbeta {\bm\beta}
+\def \bmepsi {\bm\epsilon}
+\def \bmtheta {\bm\theta}
+\def \bmeta {\bm\eta}
+\def \bmLambda {\bm\Lambda}
+\def \bmSigma {\bm\Sigma}
+\def \bma {\bm a}
+\def \bmb {\bm b}
+\def \bmc {\bm c}
+\def \bmd {\bm d}
+\def \bme {\bm e}
+\def \bmh {\bm h}
+\def \bml {\bm l}
+\def \bmp {\bm p}
+\def \bmq {\bm q}
+\def \bmr {\bm r}
+\def \bms {\bm s}
+\def \bmu {\bm u}
+\def \bmv {\bm v}
+\def \bmw {\bm w}
+\def \bmx {\bm x}
+\def \bmy {\bm y}
+\def \bmz {\bm z}
+
+\def \tbmw {\tilde{\bm w}}
+\def \tbmx {\tilde{\bm x}}
+\def \tbeta {\tilde{\beta}}
+\def \tb {\tilde{b}}
+\def \tsigma {\tilde{\sigma}}
+
+\def \mcH {\mathcal{H}}
+\def \mcI {\mathcal{I}}
+\def \mcK {\mathcal{K}}
+\def \mcL {\mathcal{L}}
+\def \mcN {\mathcal{N}}
+
+\def \FixT {\text{Fix}{(T)}}
+
+\input{lecture1}
+
+
+\end{document}
