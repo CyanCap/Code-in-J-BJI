@@ -1,0 +1,157 @@
+\documentclass{report}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{float}
+% \geometry{a4paper,scale=0.8}
+
+% \begin{spacing}{1.3541667}
+% \end{spacing}
+
+\begin{document}
+\begin{spacing}{1.3541667}
+
+\begin{center}
+\section*{Question 1}
+\end{center}
+
+\par By the definition in the textbook, we know that the effective (absolute) interest rate 
+of a given investment of duration $T =10$ years is the rate R such that
+
+\begin{align*}
+    \boxed{{(1+r\delta t)}^{\frac{T}{\delta t}}I_0=I_F=(1+R)I_0}
+\end{align*}
+
+Then we know that $I_0=11$ Gils, $I_F=15$ Gils and $T=10$ years, we can get (with 2 decimal digits)
+
+\begin{align*}
+    \boxed{R=0.36}
+\end{align*}
+
+So the absolute interest rate is 0.36.
+
+\newpage
+
+\begin{center}
+    \section*{Question 2}
+\end{center}
+
+\par We know the value of bank account with the nominal interest rate r and compounding period $\delta t$ is 
+
+\begin{align*}
+    \boxed{C_t={(1+r\delta t)}^{\frac{t}{\delta t}}C_0}
+\end{align*}
+
+With $r=2$ \%.year$^{-1}$, $\delta t=6$ months $=0.5$ year, $C_0=10$ Gils and $t=1$ year. Then we get (with 0 decimal digit)
+
+\begin{align*}
+    \boxed{C_t =10\;Gils}
+\end{align*}
+
+\par So the value of my bank account when I close it which is 1 year later is 10 Gils (with 0 decimal digit). 
+That means I almost cannot get any profit from the bank. 
+And if it is necessary to count with the profit, it is too small respect to $C_0=10$ Gils. 
+
+\newpage
+
+\begin{center}
+    \section*{Question 3}
+\end{center}
+
+\par This question require us to calculate the present value. 
+According to the formula 
+
+\begin{align*}
+    \boxed{C_t={(1+r\delta t)}^{\frac{t}{\delta t}}C_0}
+\end{align*}
+
+This time we have $C_t=10$ Gils, $r=1\%$ per period and $\delta t =1$ months $=\frac{1}{12}$ year. 
+Then the result is (with 2 decimal digits)
+
+\begin{align*}
+    \boxed{C_0=9.80\;Gils}
+\end{align*}
+
+\par That means $C_0=9.80$ Gils is the value $C_2=9.80$ Gils when 2 months after. 
+
+
+\newpage
+
+\begin{center}
+    \section*{Question 4}
+\end{center}
+
+\par We can calculate the value of bank account after $t=1$ year buying this two product represently. 
+So we need to use the formula showed previously which is 
+
+\begin{align*}
+    \boxed{C_t={(1+r\delta t)}^{\frac{t}{\delta t}}C_0}
+\end{align*}
+
+Since $t=t^A=t^B=1$ year, $C_0=10$ Gils. Next we calculate the value represently. 
+
+\par 1. Bank A
+
+We can get that (with 3 decimal digits) 
+
+\begin{align*}
+    C^{A}_t&={(1+1\%\cdot \frac{1}{6})}^{6} \cdot C_0\\
+    &=1.01004 \times 10\\
+    &=10.100\;Gils
+\end{align*}
+
+\par 2. Bank B
+
+We can get that (with 3 decimal digits) 
+
+\begin{align*}
+    C^{B}_t&={(1+2\%\cdot \frac{1}{4})}^{4} \cdot C_0\\
+    &=1.02015 \times 10\\
+    &=10.202\;Gils
+\end{align*}
+
+So we can find $\boxed{C^A_t=10.100\;Gils}$, $\boxed{C^B_t=10.202\;Gils}$. 
+Camparing this 2 value, we can easily find that $C^A_t<C^B_t$. 
+So the product in bank B can get more value than in bank A. 
+We can claim that the product in bank B is more advantageous. 
+
+\newpage
+
+\begin{center}
+    \section*{Question 5}
+\end{center}
+
+\par According to the payoff formula about American call option which is 
+
+\begin{align*}
+    \boxed{\xi=g(X_T)={(K-X_T)}^+}
+\end{align*}
+
+If I exercise my option now with current price $X_0=100$ Gils and strike $K=90$ Gils 
+I can get the payoff 
+
+\begin{align*}
+    \boxed{\xi_0 = 10\;Gils}
+\end{align*}
+
+\par Since the derivative is an American call option, and we can exercise is at any time, 
+we can get the payoff $\xi_0 =10$ Gils if we exercise now at $t=0$. 
+
+
+
+
+
+
+
+
+
+\end{spacing}
+
+\end{document}
