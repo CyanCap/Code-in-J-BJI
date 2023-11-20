@@ -1,15 +1,15 @@
-clear;clc;
+% clear;clc;
 
 location=csvread("st70.csv");
-dis=discal(location);           % calculate the distance matrix
+dis=discal(location);          
 [x,y]=size(location);
 
-nk=50;   % quantity of ants
-rho=0.1;    % factor of pheromones evaporate
+nk=100;   % quantity of ants
+rho=0.2;    % factor of pheromones evaporate
 a=2;    % alpha
 b=5;    % beta
-Q=50;   % power of pheromones
-its=50;    % number of iterations
+Q=100;   % power of pheromones
+its=20;    % number of iterations
 its_c=1;    % count the iterations
 
 eta = 1./dis; % ¦Ç
@@ -18,12 +18,12 @@ path = zeros(nk,x); % path of each ant
 path_best = zeros(its,x);   % best path of each iteration
 l = zeros(nk,1);  % distance of each ant walked
 l_best = inf.*ones(its,1);  % best distance of each iteration
-T_delta = zeros(x,x);   % sum of ¦¤T^k
+T_delta = zeros(x,x);   % sum of ¦¤¦Ó^k
 
 while its_c <= its
     
-    temp=randperm(x);
-    path(:,1)=temp(1:nk)';  % place all ants to random cities
+    temp=randi(x,nk,1);
+    path(:,1)=temp(1);  % place all ants to random cities
     
     path = path_construct(path,a,b,eta,nk,T,location);   
     
@@ -33,17 +33,19 @@ while its_c <= its
     
     T = phe_update(path,l,rho,Q,nk,T,T_delta,location);
      
-    drawnow;
-    hold off;
-    plot(1:its,l_best);
-    title(['its=',num2str(its_c),'  distance=',num2str(l_best(its_c))]);
-    legend('best distance')
+%     drawnow;                        % visualization
+%     hold off;
+%     plot(1:its,l_best);
+%     title(['its=',num2str(its_c),'  distance=',num2str(l_best(its_c))]);
+%     xlabel('Iterations');ylabel('Distance of best tourment');
+%     legend('best distance')
+    
     path = zeros(nk,x);
     its_c=its_c+1;
 end
 % l_best(end)
 
-function dis = discal(loc)
+function dis = discal(loc)   % calculate the distance matrix
 [r,l]=size(loc);
 dis=zeros(70,70);
 for i=1:r-1
@@ -88,11 +90,12 @@ for i=1:r
     l(i)=l(i)+dis(path(i,1),path(i,c));
 end
 end
-function [path_best, l_best]=reserve(path,l,path_best,l_best,its_c)
+function [path_best, l_best]=reserve(path,l,path_best,l_best,its_c)     % find the best path
 if its_c>=2
     if min(l)<=l_best(its_c-1)
         l_best(its_c)=min(l);               % find best distance
-        temp=l==l_best(its_c);
+%         temp=l==l_best(its_c);
+        temp=find(l==l_best(its_c),1);
         path_best(its_c,:)=path(temp,:);    % find best path
     else
         l_best(its_c)=l_best(its_c-1);
@@ -100,7 +103,7 @@ if its_c>=2
     end
 else
     l_best(its_c)=min(l);
-    temp=l==l_best(its_c);
+    temp=find(l==l_best(its_c),1);
     path_best(its_c,:)=path(temp,:)';
 end
 end
