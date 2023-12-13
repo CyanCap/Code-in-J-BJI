@@ -1,2 +1,2 @@
 # CI-code
-code from course CI
+code from course CI (Computational Intelligence)
