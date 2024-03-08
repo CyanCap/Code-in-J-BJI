@@ -19,9 +19,10 @@
 % 四号    小四号    五号      小五号    三号    小三号
 % 14bp    12bp      10.5bp    9bp     16bp    15bp
 \LoadClass[12pt,UTF8,noindent,openany]{ctexbook}
+\DeclareRobustCommand\Large{\@setfontsize\Large{16}{20}}
 % \AtBeginDocument{\zihao{4}}
 
-\RequirePackage[a4paper,left=30mm,right=20mm,top=25.4mm,bottom=25.4mm]{geometry}
+\RequirePackage[a4paper,left=30mm,right=20mm,top=0mm,bottom=25.4mm]{geometry}
 
 \RequirePackage{tabu}
 \RequirePackage{pifont}
@@ -50,7 +51,7 @@
 \setlength{\linespread}{2}
 
 % 中文信息指令
-\renewcommand{\title}{A thesis class for Jinan University}
+\renewcommand{\title}{\Large A thesis class for Jinan University}
 \newcommand{\biaoti}{暨南大学本科生论文模板}
 \newcommand{\xueyuan}{信息科学技术学院}
 \newcommand{\xuexi}{\;}
@@ -60,10 +61,10 @@
 \newcommand{\daoshi}{暨大大}
 
 % 英文信息指令
-\newcommand{\name}{Chen Yushuo}
-\newcommand{\stuno}{2020101918}
-\newcommand{\major}{Mathematics And Apply Mathematics}
-\newcommand{\supervisor}{Her-Hailong}
+\newcommand{\name}{\Large Chen Yushuo}
+\newcommand{\stuno}{\Large 2020101918}
+\newcommand{\major}{\Large Mathematics And Apply Mathematics}
+\newcommand{\supervisor}{\Large Her-Hailong}
 % \newcommand{\date}{06/03/2024}
 
 
@@ -121,6 +122,7 @@
 
 \newcommand{\statement}{%
   \thispagestyle{plain}
+  \vspace*{5em}
   \begingroup
   \centerline{\textbf{Statement\ of\ Originality}}%
   \vspace{2em}
@@ -139,6 +141,7 @@
 
 \newenvironment{zhabstract}{%
   \thispagestyle{plain}
+  \vspace*{\fill}
   \begin{center}
     \zihao{-3}\bfseries\biaoti
   \end{center}
@@ -146,6 +149,8 @@
 
 \newenvironment{enabstract}{%
   \thispagestyle{plain}
+  % \vspace*{\fill}
+  \vspace*{5em}
   \begin{center}
     \Large \bfseries\title
   \end{center}
@@ -167,6 +172,7 @@
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3} % 默认 subsubsection 不显示编号
+\setcounter{chapter}{-1}  % 默认 chapter从0开始
 
 \renewcommand{\contentsname}{\hfill Contents\hfill}
 
@@ -179,14 +185,24 @@
 \titlecontents{subsubsection}[6.4em]{}{\contentslabel{3.4em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
 
 % 2024.3.6  禁用  关于章节标题的设置\huge  \Large  \large
+% 2024.3.8  添加  afterskip, beforeskip 以修改标题上下文距离
 \CTEXsetup[name={,},number={\arabic{chapter}.},
-           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ }]{chapter}
+           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip=1ex,
+           afterskip=1ex]{chapter}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}},
-           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ }]{section}
+           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip=1ex,
+           afterskip=1ex]{section}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}},
-           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ }]{subsection}
+           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip=1ex,
+           afterskip=1ex]{subsection}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}},
-           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ }]{subsubsection}
+           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip=1ex,
+           afterskip=1ex]{subsubsection}
+
+% \RequirePackage{titlesec} % 设置章节下空白大小  2024.3.8 take 1
+% \titlespacing*{\chapter}{0pt}{-2pt}{2pt}
+% \titlespacing*{\section}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
+% \titlespacing*{\subsection}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
 
 \newcommand\ignorepars{\@ifnextchar\par{\expandafter\ignorepars\@gobble}{}}
 
@@ -218,12 +234,17 @@
   \setlength{\belowdisplayshortskip}{2pt}
 }
 
+% % 全文无缩进  段落间距离
+% \setlength{\parindent}{0pt} 
+% \setlength{\parskip}{4pt}
+
 \setlength\arraycolsep{4pt}
 
 \RequirePackage{CJKfntef}
 \RequirePackage{multirow}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
+\RequirePackage{amsthm}
 
 \RequirePackage{relsize}
 \newcommand{\Int}{\mathop{\mathlarger{\int}}}
@@ -248,6 +269,13 @@
 \newcommand{\ds}{\diff s}
 \newcommand{\dt}{\diff t}
 \newcommand{\dS}{\diff S}
+\newcommand{\pf}{\partial f}
+\newcommand{\ppf}{\partial^2 f}
+\newcommand{\px}{\partial x}
+\newcommand{\ppx}{\partial^2 x}
+\newcommand{\df}{\diff f}
+\newcommand{\crf}{\textbf{Cr}_f}
+
 % 有些宏包比如 hyperref 会修改 \d 的定义，所以放在 document 开始处
 % 利用 etoolbox 将 \d 定义为健壮命令，以避免在 align 等环境中错误地展开
 \AtBeginDocument{%
