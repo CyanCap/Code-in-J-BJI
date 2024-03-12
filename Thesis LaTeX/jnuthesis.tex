@@ -70,13 +70,61 @@ One, Two, Three, Four
 
 
 \chapter{Introduction}
+\noindent
+Morse theory is the study of flow in differential topology 
+using critical point analysis of differentiable functions (i.e. Morse functions) on differential manifolds
+A powerful tool for geometric topology and overall geometric structure. 
+Harold Marston $\cdot$ Morse found it in the 1920s. 
+Currently, both domestically and internationally
+The basic research on this theory has become more comprehensive, 
+and there are a large number of research results in various mathematical fields worth studying and researching for undergraduate students.
 
+This paper aims to provide a clear and systematic exposition of the basic theory of Morse Theory, 
+as well as introduce the relevant concepts of power systems.
+And conduct in-depth research on the definition of Morse Small flow and related examples. 
+This article will be based on the notebooks and lectures of a large number of mathematical predecessors
+Systematically review and summarize notes, published articles, and books.
+% 莫尔斯理论是微分拓扑学中利用微分流形上的可微函数（即莫尔斯函数）临界点分析来研究流形拓扑以及整体几何结构的强大工具。
+% 由HaroldMarston \dots Morse在20世纪20年代创立。
+% 目前国内外对该理论的基础研究已经趋于完备，有大量在各个数学领域的研究成果值得本科生进行学习研究。
 
-\chapter{part 1}
-\section{1}
+% 本论文旨在对Morse Theory的基础理论进行清晰的系统的阐述，以及介绍动力系统的相关概念。
+% 并且深入Morse-Smale流的定义以及相关例子进行研究。
+% 本文将基于大量数学前辈的notebook、lecture note以及出版的文章、书籍进行系统的回顾和综述。
+
+\chapter{Morse Functions and The Topology of Morse Functions}
+\section{Fundations About Morse Functions}
+Let $f:M \rightarrow \R$.
+A \textbf{critical point} of $f$ is the point $p\in M$ such that $d_p f = 0$.
+If there is a local coordinate system $(x^1,\cdots,\; x^n)$, that means 
+\begin{align*}
+  \frac{\partial f}{\px_1}(p)=\cdots=\frac{\pf}{\px_n}=0.
+\end{align*}
+And the real value $f(p)$ is called a \textbf{critical value} of $f$.
+Let $\crf$ be the set of all critical points of $f$.
+For $p\in \crf$, a \textbf{Hessian} of $f$ at $p$ is a $n\times n$-matrix
+\[H_{f,p}:=\left(\frac{\ppf}{\px_i \px_j}(p)\right).\]
+Moreover, $H_{f,p}:T_pM\times T_pM \rightarrow \R$ is symmetric.
+This describes the local properties near the critical point $p$.
+A critical point $p$ is non-degenerate(nondegenerate) if and only if Hessian is non-singular
+i.e.the determinant $|H_{f,p}| \neq 0$.
+We talk about the negative definiteness of matrix Hessian.
+Index $\lambda(f,p)$ of a critical point $p$ means the integer number of negative eigenvalue of $H_{f,p}$. 
+
+We call a function $f:M \rightarrow \R$ \textbf{Morse function} if it is proper and $H_{f,p}$ is nondegenerate
+for any $p \in \crf$.
+
+\section{Existence of Morse Function}
+After we define the Morse functions on a manifold, it is necessary for us to show Morse function can be found on any manifold.
 
 $\cdots\cdots$
 
+
+\section{Morse Lemma and Morse Inequalities}
+
+\chapter{Morse-Smale Dynamics}
+
+\chapter{Symplectic Manifolds and Hamiltonian Flows}
 
 \chapter{Conclusion}
 

@@ -18,11 +18,13 @@
 
 % 四号    小四号    五号      小五号    三号    小三号
 % 14bp    12bp      10.5bp    9bp     16bp    15bp
-\LoadClass[12pt,UTF8,noindent,openany]{ctexbook}
+\LoadClass[12pt,UTF8,noindent,openany,oneside]{ctexbook}
 \DeclareRobustCommand\Large{\@setfontsize\Large{16}{20}}
 % \AtBeginDocument{\zihao{4}}
 
 \RequirePackage[a4paper,left=30mm,right=20mm,top=0mm,bottom=25.4mm]{geometry}
+% \RequirePackage[a4paper,margin=1in]{geometry}
+
 
 \RequirePackage{tabu}
 \RequirePackage{pifont}
