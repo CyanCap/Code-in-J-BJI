@@ -18,13 +18,14 @@
 
 % 四号    小四号    五号      小五号    三号    小三号
 % 14bp    12bp      10.5bp    9bp     16bp    15bp
-\LoadClass[12pt,UTF8,noindent,openany,oneside]{ctexbook}
+\LoadClass[12pt,UTF8,openany,oneside]{ctexbook}
 \DeclareRobustCommand\Large{\@setfontsize\Large{16}{20}}
 % \AtBeginDocument{\zihao{4}}
 
-\RequirePackage[a4paper,left=30mm,right=20mm,top=0mm,bottom=25.4mm]{geometry}
-% \RequirePackage[a4paper,margin=1in]{geometry}
+\RequirePackage[a4paper,left=30mm,right=20mm,top=25.4mm,bottom=25.4mm]{geometry}
 
+% \RequirePackage{fontspec}
+% \setmainfont{Times New Roman}
 
 \RequirePackage{tabu}
 \RequirePackage{pifont}
@@ -36,7 +37,11 @@
 \RequirePackage{etoolbox}
 \RequirePackage{graphicx}
 \RequirePackage{Times}
+\RequirePackage{enumitem}
+% \RequirePackage{newtxtext,newtxmath}
 
+\ctexset{bibname = References}
+\RequirePackage{natbib}
 \RequirePackage{hyperref}
 \hypersetup{
    pdfstartview={FitH},
@@ -44,13 +49,15 @@
    citecolor=blue,
    filecolor=blue,
    linkcolor=black,
-   urlcolor=black,
+   urlcolor=violet,
    bookmarksnumbered,
    unicode=true % 避免用CJK时书签乱码
 }
 
 \setlength{\parindent}{2em}
-\setlength{\linespread}{2}
+% \setlength{\linespread}{2}
+\RequirePackage{setspace}
+\setstretch{1.5}
 
 % 中文信息指令
 \renewcommand{\title}{\Large A thesis class for Jinan University}
@@ -67,17 +74,19 @@
 \newcommand{\stuno}{\Large 2020101918}
 \newcommand{\major}{\Large Mathematics And Apply Mathematics}
 \newcommand{\supervisor}{\Large Her-Hailong}
-% \newcommand{\date}{06/03/2024}
+% \newcommand{\date}{19/03/2024}
 
 
-\fancypagestyle{main}{
-  \renewcommand{\headrulewidth}{0.4pt}%
-  \fancyhf{}
-  \chead{\small\biaoti}
-  \rfoot{\small\thepage}
-}
+% \fancypagestyle{main}{
+%   \renewcommand{\headrulewidth}{0.4pt}%
+%   \fancyhf{}
+%   \chead{\small\biaoti}
+%   \rfoot{\small\thepage}
+% }
 
-\pagestyle{main}
+% \pagestyle{main}
+
+\pagestyle{plain} %取消页眉保留页脚
 
 \newcommand{\underspace}[1]{\kern0pt\underline{\hspace{#1}}\kern0pt\relax}
 \newcommand{\underbox}[2]{\kern0pt\underline{\makebox[#1]{#2}}\kern0pt\relax}
@@ -115,7 +124,7 @@
       Student No.: \quad \underbox{20em}{\stuno}\\[0.6em]
       Major: \qquad \quad \enspace \underbox{20em}{\major}\\[0.6em]
       Supervisor: \quad \enspace \underbox{20em}{\supervisor}\\[0.6em]
-      Date: \qquad \qquad \underbox{20em}{06/03/2024}\\[0.6em]
+      Date: \qquad \qquad \underbox{20em}{19/03/2024}\\[0.6em]
     %   Date: \underbox{20em}{\date}\\[0.6em]
     \end{tabular}
   \end{center}
@@ -176,7 +185,7 @@
 \setcounter{secnumdepth}{3} % 默认 subsubsection 不显示编号
 \setcounter{chapter}{-1}  % 默认 chapter从0开始
 
-\renewcommand{\contentsname}{\hfill Contents\hfill}
+\renewcommand{\contentsname}{\hspace{16em} Contents \hfill}
 
 \RequirePackage{titletoc} % 2024.3.6调整目录间距
 %\titlecontents{标题层次}[左间距]{上间距和整体格式}{标题序号}{标题内容}{指引线和页码}[下间距]
@@ -189,7 +198,7 @@
 % 2024.3.6  禁用  关于章节标题的设置\huge  \Large  \large
 % 2024.3.8  添加  afterskip, beforeskip 以修改标题上下文距离
 \CTEXsetup[name={,},number={\arabic{chapter}.},
-           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip=1ex,
+           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip=-1cm,
            afterskip=1ex]{chapter}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}},
            format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip=1ex,
@@ -201,6 +210,15 @@
            format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip=1ex,
            afterskip=1ex]{subsubsection}
 
+\ctexset{chapter/break={\par\mbox{}\par}} % 取消chapter自动换页
+
+% \RequirePackage{xpatch}
+% \makeatletter
+% \xpatchcmd{\chapter}
+%   {\if@openright\cleardoublepage\else\clearpage\fi}{\par\relax}
+%   {}{}
+% \makeatother
+           
 % \RequirePackage{titlesec} % 设置章节下空白大小  2024.3.8 take 1
 % \titlespacing*{\chapter}{0pt}{-2pt}{2pt}
 % \titlespacing*{\section}{0pt}{1.2ex plus .0ex minus .0ex}{.3ex plus .0ex}
@@ -242,11 +260,25 @@
 
 \setlength\arraycolsep{4pt}
 
+% 图注切换为英文
+\RequirePackage{caption}
+\captionsetup[figure]{name={Figure},labelsep=period}
+
+% \RequirePackage[style=gb7714-2015,sorting=nyt,maxnames=3,minnames=3,date=year,isbn=false]{biblatex} %使用biblatex进行引用
+
+\RequirePackage[T1]{fontenc}  % 2024.3.13 强制黑体，某原因导致黑体永久失效，故添加  
+
 \RequirePackage{CJKfntef}
 \RequirePackage{multirow}
-\RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
+\RequirePackage{bbm}
+\RequirePackage{tikz-cd}
+
+\RequirePackage{amsmath}  % 定理环境
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\ctexset{proofname = Proof}
 
 \RequirePackage{relsize}
 \newcommand{\Int}{\mathop{\mathlarger{\int}}}
@@ -254,6 +286,7 @@
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\limit}{\lim\limits}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb{D}}
 
 \DeclareMathOperator{\Corr}{\rho}
 \DeclareMathOperator{\Cov}{Cov}
@@ -275,8 +308,21 @@
 \newcommand{\ppf}{\partial^2 f}
 \newcommand{\px}{\partial x}
 \newcommand{\ppx}{\partial^2 x}
+\newcommand{\py}{\partial y}
+\newcommand{\ppy}{\partial^2 y}
 \newcommand{\df}{\diff f}
 \newcommand{\crf}{\textbf{Cr}_f}
+\newcommand{\ig}{\textit{g}}
+\newcommand{\ip}{\textit{p}}
+\newcommand{\im}{\textit{M}}
+\newcommand{\itt}{\textit{t}}
+\newcommand{\iw}{\textit{W}}
+\newcommand{\is}{\textit{S}}
+\newcommand{\po}{p_0}
+\newcommand{\wpp}{\textit{W}^+}
+\newcommand{\wmm}{\textit{W}^-}
+\newcommand{\vph}{\varPhi}
+\newcommand{\vps}{\varPsi}
 
 % 有些宏包比如 hyperref 会修改 \d 的定义，所以放在 document 开始处
 % 利用 etoolbox 将 \d 定义为健壮命令，以避免在 align 等环境中错误地展开
