@@ -113,7 +113,7 @@
 %   \newpage
 % }
 
-\renewcommand{\titlepage}{%中文封面
+\renewcommand{\titlepage}{%英文封面
   \thispagestyle{empty}
   \vspace*{\fill}
   \noindent Title:  \fillout{\title}
@@ -124,18 +124,18 @@
       Student No.: \quad \underbox{20em}{\stuno}\\[0.6em]
       Major: \qquad \quad \enspace \underbox{20em}{\major}\\[0.6em]
       Supervisor: \quad \enspace \underbox{20em}{\supervisor}\\[0.6em]
-      Date: \qquad \qquad \underbox{20em}{19/03/2024}\\[0.6em]
+      Date: \qquad \qquad \underbox{20em}{03/04/2024}\\[0.6em]
     %   Date: \underbox{20em}{\date}\\[0.6em]
     \end{tabular}
   \end{center}
   \newpage
 }
 
-\newcommand{\statement}{%
+\newcommand{\statement}{%英文诚信声明
   \thispagestyle{plain}
   \vspace*{5em}
   \begingroup
-  \centerline{\textbf{Statement\ of\ Originality}}%
+  \centerline{\textbf{Statement\ of\ Originality}}
   \vspace{2em}
   \noindent
   I hereby declare that the thesis presented is the result of research performed by me personally, 
@@ -144,15 +144,32 @@
   nor does it contain any material previously presented to other educational institutions for degree or certificate purpose to the best of my knowledge. 
   I promise that all facts presented in this thesis are true and creditable.
   \par\vspace{5.5cm}%
-  \noindent Signed:\hfill Date:
+  \noindent Signed:\includegraphics[height = 0.8cm]{signature.jpg}\hfill Date: 28/03/2024
   \par
   \endgroup
   \newpage
 }
+% \newcomamnd{\cnstatement}{%中文诚信声明
+%   \zihao{-3}
+%   \thispagestyle{plain}
+%   \vspace*{5em}
+%   \begingroup
+%   \centerline{\textbf{诚\ 信\ 声\ 明}}
+%   \vspace{2em}
+%   我声明，所呈交的毕业论文是本人在老师指导下进行的研究工作及取得的研究成果。
+%   据我查证，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得其他教育机构的学位或证书而使用过的材料。
+%   我承诺，论文中的所有内容均真实、可信。
+%   \par\vspace{5.5cm}%
+%   \noindent 毕业论文作者签名：\hfill 签名日期：  年  月  日
+%   \par
+%   \endgroup
+%   \newpage
+% }
 
 \newenvironment{zhabstract}{%
   \thispagestyle{plain}
-  \vspace*{\fill}
+  % \vspace*{\fill}
+  \vspace*{5em}
   \begin{center}
     \zihao{-3}\bfseries\biaoti
   \end{center}
@@ -274,6 +291,15 @@
 \RequirePackage{amsthm}
 \RequirePackage{bbm}
 \RequirePackage{tikz-cd}
+
+\RequirePackage[usenames,dvipsnames]{pstricks}
+\RequirePackage{pstricks-add}
+\RequirePackage{epsfig}
+\RequirePackage{pst-grad} % For gradients
+\RequirePackage{pst-plot} % For axes
+\RequirePackage[space]{grffile} % For spaces in paths
+\RequirePackage{etoolbox} % For spaces in paths
+\RequirePackage{subfigure}  %子图
 
 \RequirePackage{amsmath}  % 定理环境
 \newtheorem{theorem}{Theorem}
