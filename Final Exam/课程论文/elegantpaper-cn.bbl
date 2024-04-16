@@ -1,0 +1,234 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{2022NianGaoJiaoSheBeiQuanGuoDaXueShengShuXueJianMoGuoSaiBTiSiLu}{online}{}
+    \list{organization}{1}{%
+      {{知乎专栏}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{2}
+    \field{sortinithash}{2}
+    \field{abstract}{%
+  以下，是我对2022年高教社杯全国大学生数学建模国赛B题思路的一些看法和见解，大家有问题可以评论，此贴也作为答疑帖。
+  先贴题目：如下是思路分析：
+  无人机的问题属于近年来的热点问题，以往多为调度问题，此次属…%
+    }
+  \field{title}{2022年高教社杯全国大学生数学建模国赛B题思路}
+    \verb{url}
+    \verb https://zhuanlan.zhihu.com/p/564834746
+    \endverb
+    \field{langid}{chinese}
+  \endentry
+
+  \entry{ZhangLiangFenXiZhiJiaoZuoBiaoJiZuoBiao}{online}{}
+    \list{organization}{1}{%
+      {{知乎专栏}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{abstract}{%
+  许多物理问题的定义域常涉及曲线或曲面边界，为便于求解经常引入曲线坐标系。因此本小节主要探讨
+  二维笛卡尔直角坐标系与极坐标系的基向量定义。 一.
+  前言在中学时期，我们就学过直角坐标与极坐标的转化关系，即：…%
+    }
+  \field{title}{张量分析——直角坐标，极坐标（曲线）基向量定义}
+    \verb{url}
+    \verb https://zhuanlan.zhihu.com/p/372259767
+    \endverb
+    \field{langid}{chinese}
+    \verb{file}
+    \verb C:\Users\34997\Zotero\storage\LB9TTEP9\372259767.html
+    \endverb
+  \endentry
+
+  \entry{WuLiRenDePingMianJiZuoBiaoXiYiJiYunDongMiaoShu}{online}{}
+    \list{organization}{1}{%
+      {{知乎专栏}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{abstract}{%
+    给大家介绍一下对于物理系学生来说非常重要的
+  平面极坐标系。请看下图：如上图所示， \textbackslash
+  vec\{r\^\{o\}\}
+  是径向单位矢量（角标0指的是0次方，个人觉得0次方很直观得说明“单位”二字），
+  \textbackslash vec\{\textbackslash theta\^\{o\}\} 是角向[1]单位…%
+    }
+    \field{title}{物理人的平面极坐标系以及运动描述}
+    \verb{url}
+    \verb https://zhuanlan.zhihu.com/p/463591300
+    \endverb
+    \field{langid}{chinese}
+    \verb{file}
+    \verb C:\Users\34997\Zotero\storage\F4Z35DTH\463591300.html
+    \endverb
+  \endentry
+
+  \entry{XiaoZiGuaYingHunDunYiQunSuanFaDeLiangShiYingJiLuJingYouHuaYanJiu2012}{article}{}
+    \name{author}{3}{}{%
+      {{hash=��}{%
+         family={肖},
+         familyi={�\bibinitperiod},
+         given={乐},
+         giveni={�\bibinitperiod},
+      }}%
+      {{hash=��}{%
+         family={吴},
+         familyi={�\bibinitperiod},
+         given={相林},
+         giveni={�\bibinitperiod},
+      }}%
+      {{hash=��}{%
+         family={甄},
+         familyi={�\bibinitperiod},
+         given={彤},
+         giveni={�\bibinitperiod},
+      }}%
+    }
+  \keyw{有效解相似度,粮食应急,自适应混沌蚁群算法,路径优化,风险管理}
+    \strng{namehash}{������1}
+    \strng{fullhash}{������1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{abstract}{%
+  针对风险管理下的粮食应急路径优化问题,将"运输风险最小"和"运输时间最小"作为目标,建立相应的优化模型。利用"最大最小蚂蚁系统"进行求解,为避免过早陷入局部最优,提出自适应混沌蚁群优化算法。该算法利用有效解相似度来判断蚁群当前状态,根据情况对信息素进行全局更新和混沌扰动,可以有效地提高最优解的精度。实验表明该算法优于传统的演化算法,较好地解决了粮食应急运输路径优化问题。%
+    }
+    \field{issn}{1002-8331}
+    \field{number}{24}
+    \field{pages}{28\bibrangedash 31+44}
+    \field{title}{自适应混沌蚁群算法的粮食应急路径优化研究}
+    \field{volume}{48}
+    \field{langid}{chinese}
+    \verb{file}
+    \verb C:\Users\34997\Zotero\storage\JDUF7PJA\肖 等 - 2012 - 自适应混�
+    \verb ��蚁群算法的粮食应急路径优化研究.pdf
+    \endverb
+    \field{journaltitle}{计算机工程与应用}
+    \field{year}{2012}
+  \endentry
+
+  \entry{ZhaoJiYuGaiJinYiQunSuanFaDeWuLiuPeiSongFuZaLuJingYouHuaWenTiYanJiu2011}{article}{}
+    \name{author}{4}{}{%
+      {{hash=��}{%
+         family={赵},
+         familyi={�\bibinitperiod},
+         given={勇},
+         giveni={�\bibinitperiod},
+      }}%
+      {{hash=��}{%
+         family={曾},
+         familyi={�\bibinitperiod},
+         given={勇},
+         giveni={�\bibinitperiod},
+      }}%
+      {{hash=��}{%
+         family={贾},
+         familyi={�\bibinitperiod},
+         given={春华},
+         giveni={�\bibinitperiod},
+      }}%
+      {{hash=��}{%
+         family={简},
+         familyi={�\bibinitperiod},
+         given={三军},
+         giveni={�\bibinitperiod},
+      }}%
+    }
+  \keyw{动态费用系数,物流配送,蚁群算法,装卸混合,路径优化}
+    \strng{namehash}{��+1}
+    \strng{fullhash}{��������1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{abstract}{%
+  对物流配送中这类有装卸混合和任务组合的复杂路径优化问题,建立了考虑实际载重量的动态费用计算模型,并在基本蚁群算法基础上,改变了常用的以地点为基础的编码方式,取之以具体作业作为编码基础,既简化了这类复杂路径问题的算法设计,也便于算法的编程实现,并在局部作业路径搜索时根据问题特点设计了相应的启发式算法,并通过编程运行实验,证明了该算法的有效性。%
+    }
+    \field{issn}{1005-6432}
+    \field{number}{28}
+    \field{pages}{6\bibrangedash 8+11}
+  \field{title}{基于改进蚁群算法的物流配送复杂路径优化问题研究}
+    \field{langid}{chinese}
+    \verb{file}
+    \verb C:\Users\34997\Zotero\storage\Q85987AB\赵 等 - 2011 - 基于改进�
+    \verb ��群算法的物流配送复杂路径优化问题研究.pdf
+    \endverb
+    \field{journaltitle}{中国市场}
+    \field{year}{2011}
+  \endentry
+
+  \entry{ShaoJiZuoBiaoXiaShiLiangDeWeiFenJiHeYanJiu2015}{article}{}
+    \name{author}{4}{}{%
+      {{hash=��}{%
+         family={邵},
+         familyi={�\bibinitperiod},
+         given={毅全},
+         giveni={�\bibinitperiod},
+      }}%
+      {{hash=��}{%
+         family={田},
+         familyi={�\bibinitperiod},
+         given={莉兰},
+         giveni={�\bibinitperiod},
+      }}%
+      {{hash=��}{%
+         family={黄},
+         familyi={�\bibinitperiod},
+         given={永超},
+         giveni={�\bibinitperiod},
+      }}%
+      {{hash=��}{%
+         family={倪},
+         familyi={�\bibinitperiod},
+         given={陶},
+         giveni={�\bibinitperiod},
+      }}%
+    }
+    \keyw{加速度,极坐标}
+    \strng{namehash}{��+1}
+    \strng{fullhash}{��������1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{�}
+    \field{sortinithash}{�}
+    \field{abstract}{%
+  本文利用微分几何的方法,研究了极坐标下质点运动的加速度表达式,发现有值得商榷的地方.%
+    }
+    \verb{doi}
+    \verb 10.14016/j.cnki.jgzz.2015.01.085
+    \endverb
+    \field{issn}{0253-2743}
+    \field{number}{1}
+    \field{pages}{85\bibrangedash 86}
+    \field{title}{极坐标下矢量的微分几何研究}
+    \field{volume}{36}
+    \field{langid}{chinese}
+    \verb{file}
+    \verb C:\Users\34997\Zotero\storage\9K7WISJ5\邵 等 - 2015 - 极坐标下�
+    \verb ��量的微分几何研究.pdf
+    \endverb
+    \field{journaltitle}{激光杂志}
+    \field{year}{2015}
+  \endentry
+\enddatalist
+\endinput
