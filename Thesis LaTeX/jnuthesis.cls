@@ -309,6 +309,8 @@
 \RequirePackage{relsize}
 \newcommand{\Int}{\mathop{\mathlarger{\int}}}
 
+\RequirePackage[final]{pdfpages}  %插入pdf页面
+
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\limit}{\lim\limits}
 \newcommand{\R}{\mathbb{R}}
